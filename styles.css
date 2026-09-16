@@ -1,0 +1,129 @@
+
+/* Box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* CSS variables */
+:root {
+  --color: #4a4a4a;
+  --spacing: 1rem;
+}
+
+/* Basic styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--color);
+  line-height: 1.6;
+}
+
+main,
+.header,
+footer {
+  padding: var(--spacing);
+}
+
+/* Header with Flexbox */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing);
+  background: #f2f2f2;
+}
+
+/* Navigation */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--color);
+}
+
+/* Cat cards - Grid */
+.cat-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing);
+  margin: 2rem 0;
+}
+
+.cat-card {
+  padding: var(--spacing);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.cat-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th,
+td {
+  padding: 4cm;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+}
+
+input,
+button {
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+/* 700px: 2 columns */
+@media (min-width: 700px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .links {
+    flex-direction: row;
+  }
+
+  .cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1250px: 3 columns */
+@media (min-width: 1250px) {
+  .cat-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+```
